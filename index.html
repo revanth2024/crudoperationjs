@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Club Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/images/favicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+</head>
+
+<body>
+    <div id="frontbackground">
+        <div><img src="assets/images/image-removebg-preview.png" alt="" class="messiimage"></div>
+        <div>
+            <h1 class="heading">Football club Registration form</h1>    
+            <form action="#" class="formbackground">  
+                <label for="firstname">Player name</label><br>
+                <input type="text" placeholder="First name" id="firstname">
+                <input type="text" placeholder="Last name" id="lastname"><br>     
+                <p id="errormessage"></p>       
+                <label for="dateofbirth">Date of Birth</label><br>
+                <input type="date" placeholder="Date of Birth" id="dateofbirth"><br>
+                <p id="errordob" ></p> 
+                <label for="address">Home address</label><br>
+                <input type="text" placeholder="Home address" id="address"><br>
+                <p id="errorlocation"></p>
+                <input type="text" placeholder="City" id="cityname">
+                <input type="number" placeholder="Pincode/Zip code" id="zipcode"><br>
+                <p id="mandatorycityname"></p>
+                <p id="mandatorypincode"></p>
+                <label for="mobilenumber">Mobile Number</label><br>
+                <input type="number" id="mobilenumber" ><br>
+                <p id="mandatorynumber"></p>
+                <label for="">Gender</label>
+                <input type="radio" name="gender" id="male" >
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="female" >
+                <label for="female">Female</label>
+                <input type="radio" name="gender" id="others" >
+                <label for="others">Others</label><br>
+                <p id="errormessageforgender"></p>
+                <label for="height">Height & Weight</label><br>
+                <input type="text" placeholder="160' : 65" id="height"><br> 
+                <p id="errorheightandweight"></p>           
+                <input type="checkbox" name="" id="checkbox">
+                <label for="checkbox">I agree to submit</label><br>
+                <p id="errormessageforcheckbox"></p>
+                <button  id="submitbutton">Submit</button> 
+            </form>
+        </div>
+        <div><img src="assets/images/football-removebg-preview.png" alt="" class="football"></div>          
+    </div>
+
+    <div id="datadivision">
+        <h1 class="newpageheading">Successfully Submitted</h1>
+        <ul class="newsheetheading">
+            <li class="playername">Player name</li>
+            <li class="dobname">Date of birth</li>
+            <li class="addressname">Home address</li>
+            <li class="cityname">City name</li>
+            <li class="pincodename">Zip code</li>
+            <li class="mobilename">Mobile number</li>
+            <li class="heightname">Height& Weight</li>
+        </ul>
+        <ul id="updatingdata">
+
+        </ul>    
+        <div class="buttonalignment">
+            <button id="backbutton">Back</button>
+        </div>    
+        
+    </div>
+
+    <script>
+        let firstnamevariable = document.getElementById("firstname");
+        let errormessagevariable = document.getElementById("errormessage");
+        let dobvariable = document.getElementById("dateofbirth");
+        let errorvariable = document.getElementById("errordob");
+        let homeaddress = document.getElementById("address");
+        let locationvariable = document.getElementById("errorlocation");
+        let citynamevariable = document.getElementById("cityname");
+        let zipcodevariable = document.getElementById("zipcode");
+        let mandatorypincodevariable = document.getElementById("mandatorypincode");
+        let errormessagecityname = document.getElementById("mandatorycityname");
+        let mobilenumvariable = document.getElementById("mobilenumber");
+        let errormobilenumber = document.getElementById("mandatorynumber");
+        let heightandweight = document.getElementById("height");
+        let errormessageforheight =document.getElementById("errorheightandweight");
+        let checkboxvariable =document.getElementById("checkbox");
+        let errormsgcheckboxvariable = document.getElementById("errormessageforcheckbox");
+        let malevariable = document.getElementById("male");
+        let femalevariable = document.getElementById("female");
+        let othersvariable = document.getElementById("others");
+        let errormessageforgender = document.getElementById("errormessageforgender");
+
+        let formdivisionvariable = document.getElementById("frontbackground");
+        let datadivisionvariable =document.getElementById("datadivision");
+        let backbuttonvariable = document.getElementById("backbutton");
+      
+        let ultagcalling = document.getElementById("updatingdata");
+
+        let submitbtnvariable = document.getElementById("submitbutton");
+        
+        backbuttonvariable.style.display = "none";
+        datadivisionvariable.style.display = "none";
+                
+        submitbtnvariable.addEventListener("click",function crudoperation(event){
+            event.preventDefault();
+            datadivisionvariable.style.display = "none";            
+            if(firstnamevariable.value == "" || firstnamevariable.value == "null" || firstnamevariable.value == "undefined"){
+                errormessagevariable.innerHTML= "Enter your name"; 
+                console.log(firstnamevariable.value); 
+                return false;              
+            }
+            else{
+                console.log(firstnamevariable.value);
+                errormessagevariable.innerHTML="";
+            } 
+                 
+            if(dobvariable.value == "" || dobvariable.value == null || dobvariable.value == "undefined"){
+                errorvariable.innerHTML= "Enter your Date of birth"; 
+                console.log(dobvariable.value); 
+                return false;              
+            }
+            else{
+                console.log(dobvariable.value);
+                errorvariable.innerHTML="";
+            }
+
+            if(homeaddress.value == "" || homeaddress.value == "null" || homeaddress.value == "undefined"){
+                locationvariable.innerHTML= "Enter your address"; 
+                console.log(homeaddress.value); 
+                return false;              
+            }
+            else{
+                console.log(homeaddress.value);
+                locationvariable.innerHTML="";
+            }
+
+            if(citynamevariable.value == "" || citynamevariable.value == "null" || citynamevariable.value == "undefined"){
+                errormessagecityname.innerHTML= "Enter your city name"; 
+                console.log(citynamevariable.value); 
+                return false;              
+            }
+            else{
+                console.log(citynamevariable.value);
+                errormessagecityname.innerHTML="";
+            }
+
+            if(zipcodevariable.value == "" || zipcodevariable.value == "null" || zipcodevariable.value == "undefined"){
+                mandatorypincodevariable.innerHTML= "Enter your pincode"; 
+                console.log(zipcodevariable.value); 
+                return false;              
+            }
+            else{
+                console.log(zipcodevariable.value);
+                mandatorypincodevariable.innerHTML="";
+            }
+
+            if(mobilenumvariable.value == "" || mobilenumvariable.value == "null" || mobilenumvariable.value == "undefined"){
+                errormobilenumber.innerHTML= "Enter your Mobile number"; 
+                console.log(mobilenumvariable.value); 
+                return false;              
+            }
+            else{
+                console.log(mobilenumvariable.value);
+                errormobilenumber.innerHTML="";
+            }
+
+            if(!malevariable.checked || femalevariable.checked || othersvariable.checked){
+                errormessageforgender.innerHTML="please select the gender";
+                return false;
+            }
+            else{
+                errormessageforgender.innerHTML="";
+            }
+
+            if(heightandweight.value == "" || heightandweight.value == "null" || heightandweight.value == "undefined"){
+                errormessageforheight.innerHTML= "Mention your height & weight"; 
+                console.log(heightandweight.value); 
+                return false;              
+            }
+            else{
+                console.log(heightandweight.value);
+                errormessageforheight.innerHTML="";
+            } 
+            
+            if( !checkboxvariable.checked){
+                errormsgcheckboxvariable.innerHTML="please tick the agree box";
+                console.log(checkboxvariable.value);
+                return false;
+            }
+            else{
+                console.log(checkboxvariable.value);
+                errormsgcheckboxvariable.innerHTML="";
+            }     
+                        
+            
+            let newdivision = document.createElement("div");
+            ultagcalling.appendChild(newdivision);
+            ultagcalling.classList.add("classnameaddon");
+            let newinputtag = document.createElement("input");
+            newinputtag.value = firstnamevariable.value;
+            newinputtag.setAttribute("readonly","readonly");
+            newdivision.appendChild(newinputtag);
+
+            let dobnewinputtag = document.createElement("input");
+            dobnewinputtag.value = dobvariable.value;
+            dobnewinputtag.setAttribute("readonly","readonly");
+            newdivision.appendChild(dobnewinputtag);
+
+            let addressinputtag =document.createElement("input");
+            addressinputtag.value = homeaddress.value;
+            addressinputtag.setAttribute("readonly","readonly");
+            newdivision.appendChild(addressinputtag);
+
+            let citynameinputtag =document.createElement("input");
+            citynameinputtag.value = citynamevariable.value;
+            citynameinputtag.setAttribute("readonly","readonly");
+            newdivision.appendChild(citynameinputtag);
+
+            let zipcodeinputtag = document.createElement("input");
+            zipcodeinputtag.value = zipcodevariable.value;
+            zipcodeinputtag.setAttribute("readonly","readonly");
+            newdivision.appendChild(zipcodeinputtag);
+
+            let mobilenumberinputtag = document.createElement("input");
+            mobilenumberinputtag.value = mobilenumvariable.value;
+            mobilenumberinputtag.setAttribute("readonly","readonly");
+            newdivision.appendChild(mobilenumberinputtag);
+
+            let heightandweightinputtag = document.createElement("input");
+            heightandweightinputtag.value = heightandweight.value;
+            heightandweightinputtag.setAttribute("readonly","readonly");
+            newdivision.appendChild(heightandweightinputtag);
+
+                    
+            let editbutton = document.createElement("button");
+            editbutton.innerHTML = "Edit";
+            editbutton.classList.add("editbutton");
+            newdivision.appendChild(editbutton);
+            editbutton.addEventListener("click",function(){
+                newinputtag.removeAttribute("readonly","readonly");
+                dobnewinputtag.removeAttribute("readonly","readonly");                
+                addressinputtag.removeAttribute("readonly","readonly");                
+                citynameinputtag.removeAttribute("readonly","readonly");  
+                zipcodeinputtag.removeAttribute("readonly","readonly");              
+                mobilenumberinputtag.removeAttribute("readonly","readonly");              
+                heightandweightinputtag.removeAttribute("readonly","readonly");              
+            })
+
+            let savebutton = document.createElement("button");
+            savebutton.innerHTML = "Save";
+            savebutton.classList.add("savebutton");
+            newdivision.appendChild(savebutton);
+            savebutton.addEventListener("click",function(){
+                newinputtag.setAttribute("readonly","readonly");
+                dobnewinputtag.setAttribute("readonly","readonly");
+                addressinputtag.setAttribute("readonly","readonly");
+                citynameinputtag.setAttribute("readonly","readonly");
+                zipcodeinputtag.setAttribute("readonly","readonly");
+                mobilenumberinputtag.setAttribute("readonly","readonly");
+                heightandweightinputtag.setAttribute("readonly","readonly");
+            })
+
+            let deletebutton = document.createElement("button");
+            deletebutton.innerHTML ="Delete";
+            deletebutton.classList.add("deletebutton");
+            newdivision.appendChild(deletebutton);         
+            deletebutton.addEventListener("click",function(){
+                newdivision.style.display="none";
+            })
+
+            formdivisionvariable.style.display = "none";
+            backbuttonvariable.style.display = "block";  
+            datadivisionvariable.style.display = "block";          
+        })   
+
+        backbuttonvariable.addEventListener("click",function(){
+                formdivisionvariable.style.display = "flex";
+                datadivisionvariable.style.display = "none";
+                backbuttonvariable.style.display = "none";
+            })
+
+    </script>
+
+</body>
+</html>

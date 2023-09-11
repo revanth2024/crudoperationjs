@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 95%;
+    margin: auto;
+}
+#frontbackground{
+    height: 800px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color:#3b9c80;
+}
+.messiimage{
+    height: 650px;    
+}
+.football{
+    height: 250px ;
+    width: 180px;
+    padding: 400px 50px 0px 0px ;
+}
+.football{
+  animation-name: ballmoving;
+  animation-delay: 1s;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  position: relative;
+}
+@keyframes ballmoving{
+    0%{
+        height: 200px;
+        width: 180px;
+        bottom: 0px;
+    }
+    50%{
+        height: 250px;
+        width: 180px;
+    }
+    100%{
+        bottom: 400px;        
+    }
+}
+.formbackground label{
+    font-family:poppins;
+    color: white;
+}
+.formbackground input{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px 0px 10px 0px;
+    box-shadow: 2px 2px grey;
+}
+.formbackground {
+    background-color: #000000d7;
+    border-radius: 10px;
+    padding: 30px 50px;    
+    margin-bottom: 30px;
+}
+.heading{
+    font-family: poppins;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    padding: 50px 0px 20px 0px;
+}
+::placeholder{
+    color: grey;
+}
+#firstname,#cityname{
+    width: 173px;
+}
+#lastname,#zipcode{
+    width: 174px;
+}
+#dateofbirth{
+    width: 371px;
+}
+#address{
+    width: 371px;
+}
+#height{
+    width: 371px;
+}
+#mobilenumber{
+    width: 371px;
+}
+#male ,#female ,#others{
+    box-shadow: none;
+    margin-left: 30px;
+}
+#checkbox {
+    box-shadow: none; 
+    border: none;
+}
+#submitbutton{
+    padding: 10px 50px;
+    border-style: none;
+    border-radius: 50px;
+    margin: 20px 120px;
+    background-color: #009c53;
+    color: white;
+}
+#errormessage{
+    color:red;
+    font-family: poppins;
+    font-weight: lighter;
+    padding-left: 30px;
+}
+#errordob{
+    color:red;
+    font-family: poppins;
+    font-weight: lighter;
+    padding-left: 30px;
+}
+#errorlocation{
+    color:red;
+    font-family: poppins;
+    font-weight: lighter;
+    padding-left: 30px;
+}
+#mandatorycityname{
+    color:red;
+    font-family: poppins;
+    font-weight: lighter;
+    padding-left: 30px;
+}
+#mandatorynumber{
+    color:red;
+    font-family: poppins;
+    font-weight: lighter;
+    padding-left: 30px;
+}
+#mandatorypincode{
+    color:red;
+    font-family: poppins;
+    font-weight: lighter;
+    padding-left: 100px;
+}
+#errorheightandweight{
+    color:red;
+    font-family: poppins;
+    font-weight: lighter;
+    padding-left: 30px;
+}
+#errormessageforcheckbox{
+    color:red;
+    font-family: poppins;
+    font-weight: lighter;
+    padding-left: 30px;
+}
+#errormessageforgender{
+    color:red;
+    font-family: poppins;
+    font-weight: lighter;
+    padding-left: 30px;
+}
+#datadivision{
+    background-color:rgba(83, 83, 83, 0.98);
+    min-height: 100vh;
+    width: 100%;
+}
+.newpageheading{
+    font-family: poppins;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+}
+.playername{
+    font-family: poppins;
+    color: black;
+    list-style-type: none;
+    padding: 10px 10px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    width: 130px;
+}
+.dobname{
+    font-family: poppins;
+    color: black;
+    list-style-type: none;
+    padding: 10px 10px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    width: 128px;
+}
+.addressname{
+    font-family: poppins;
+    color: black;
+    list-style-type: none;
+    padding: 10px 10px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    width: 130px;
+}
+.cityname{
+    font-family: poppins;
+    color: black;
+    list-style-type: none;
+    padding: 10px 10px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    width: 125px;
+}
+.pincodename{
+    font-family: poppins;
+    color: black;
+    list-style-type: none;
+    padding: 10px 10px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    width: 130px;
+}
+.mobilename{
+    font-family: poppins;
+    color: black;
+    list-style-type: none;
+    padding: 10px 10px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    width: 130px;
+}
+.heightname{
+    font-family: poppins;
+    color: black;
+    list-style-type: none;
+    padding: 10px 10px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    width: 130px;
+}
+.newinputtag{
+    padding: 10px;
+}
+.newsheetheading{
+    display: flex;
+    justify-content: center;
+    padding: 50px 0px 0px 0px;
+    margin-right: 198px;
+}
+#backbutton{
+    background-color: rgb(197, 196, 196);
+    color: black;
+    font-family: poppins;
+    padding: 10px 25px;
+    border-radius: 15px;
+    text-align: center;
+    border: none ;
+}
+.buttonalignment{
+    display: flex;
+    justify-content: center;
+    padding: 30px ;
+}
+.editbutton{
+    padding: 10px 15px;
+    color:black;
+    border: none;
+    border-radius: 8px;
+    margin: 2px 5px;
+}
+.savebutton{
+    padding: 10px 15px;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    margin-right: 5px; 
+    margin: 2px 5px 2px 0px;
+}
+.deletebutton{
+    padding:10px 15px;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    margin: 2px 0px;
+}
+.classnameaddon input{
+    padding: 5px 0px;
+    margin: 2px 0px;
+    text-align: center;
+    width: 145px;
+}
+.classnameaddon div{
+    display: flex;
+    justify-content: center;
+}
